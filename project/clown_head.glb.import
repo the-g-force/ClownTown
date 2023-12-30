@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
 uid="uid://q1bpotpu6fpv"
+=======
+uid="uid://bdxtbo0eomdw8"
+>>>>>>> 0876e9d (Add clown head import files)
 path="res://.godot/imported/clown_head.glb-cd61fd89e59da5f4a5a28e0c79ea7a84.scn"
 
 [deps]
