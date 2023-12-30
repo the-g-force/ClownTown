@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://pog1f6cctk83"]
+[gd_scene load_steps=11 format=3 uid="uid://pog1f6cctk83"]
 
 [ext_resource type="PackedScene" uid="uid://dbhexktlm6ox4" path="res://player/player.tscn" id="1_8wopq"]
 [ext_resource type="Script" path="res://people/models/player_follow_camera.gd" id="2_inu3m"]
 [ext_resource type="PackedScene" uid="uid://bqbu13mcbihai" path="res://people/person.tscn" id="3_5clvs"]
+[ext_resource type="PackedScene" uid="uid://bxivuld1w250u" path="res://city/block.tscn" id="4_fmgm5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpiwl"]
 albedo_color = Color(1, 0, 0, 1)
@@ -41,13 +42,16 @@ collision_layer = 2
 shape = SubResource("BoxShape3D_svaw5")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 0.907624, 0.419785, 0, -0.419785, 0.907624, 0, 3.62015, 6.14931)
+transform = Transform3D(1, 0, 0, 0, 0.757633, 0.65268, 0, -0.65268, 0.757633, 0, 3.62015, 6.14931)
 current = true
 script = ExtResource("2_inu3m")
 player = NodePath("../Player")
+distance_behind_player = 2.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dhw07")
 
 [node name="Person" parent="." instance=ExtResource("3_5clvs")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.55967, 0, -24.087)
+
+[node name="Block" parent="." instance=ExtResource("4_fmgm5")]
