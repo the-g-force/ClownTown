@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://pog1f6cctk83"]
+[gd_scene load_steps=12 format=3 uid="uid://pog1f6cctk83"]
 
 [ext_resource type="PackedScene" uid="uid://dbhexktlm6ox4" path="res://player/player.tscn" id="1_8wopq"]
 [ext_resource type="Script" path="res://people/models/player_follow_camera.gd" id="2_inu3m"]
 [ext_resource type="PackedScene" uid="uid://bqbu13mcbihai" path="res://people/person.tscn" id="3_5clvs"]
 [ext_resource type="PackedScene" uid="uid://bxivuld1w250u" path="res://city/block.tscn" id="4_fmgm5"]
+[ext_resource type="AudioStream" uid="uid://ccwowgtxr2bg1" path="res://circus.ogg" id="5_kvf5x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpiwl"]
 albedo_color = Color(1, 0, 0, 1)
@@ -55,3 +56,7 @@ environment = SubResource("Environment_dhw07")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 0.125, -13.6125)
 
 [node name="Block" parent="." instance=ExtResource("4_fmgm5")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_kvf5x")
+autoplay = true
