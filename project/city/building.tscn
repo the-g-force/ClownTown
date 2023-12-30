@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jr6iys7fjfvo"]
+
+[ext_resource type="PackedScene" uid="uid://bocxj08o7r4wi" path="res://city/building.glb" id="1_sj2ra"]
+
+[node name="Building" instance=ExtResource("1_sj2ra")]
+
+[node name="mergedBlocks(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73746, 2.59218)

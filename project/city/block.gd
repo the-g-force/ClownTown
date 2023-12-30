@@ -1,6 +1,11 @@
 extends Node3D
 
 const PERSON := preload("res://people/person.tscn")
+const BUILDINGS := [
+	preload("res://city/barn.tscn"),
+	preload("res://city/building.tscn"),
+	preload("res://city/canopy.tscn"),
+]
 
 const OBSTACLES := [
 	preload("res://obstacles/convertible.tscn"),
@@ -11,14 +16,25 @@ const OBSTACLES := [
 ]
 
 var generate_obstacle := false
-var no_obstacle_index := 3
+
+## Counts the number of empty blocks at the start of the game (without obstacles)
+var empty_block_counter := 3
+
+@onready var building_marker_left := $Building_Left
+@onready var building_marker_right := $Building_Right
 
 
 func _ready()->void:
-	if generate_obstacle and no_obstacle_index <= 0:
+	if generate_obstacle:
 		_generate_obstacle()
 	for _i in randi() % 2:
 		call_deferred("_generate_person")
+		
+	# Create buildings
+	var building_left :Node3D = BUILDINGS.pick_random().instantiate()
+	building_marker_left.add_child(building_left)
+	var building_right :Node3D = BUILDINGS.pick_random().instantiate()
+	building_marker_right.add_child(building_right)
 
 
 func _generate_person()->void:
@@ -40,9 +56,9 @@ func _generate_obstacle()->void:
 		0.0
 	)
 	var obstacle :StaticBody3D = OBSTACLES.pick_random().instantiate()
-	get_parent().add_child(obstacle)
+	add_child(obstacle)
 	obstacle.rotate_y(TAU/2)
-	obstacle.global_position = global_position + lane_offset
+	obstacle.position = lane_offset
 
 
 func _on_visible_on_screen_notifier_3d_screen_entered():
@@ -50,11 +66,20 @@ func _on_visible_on_screen_notifier_3d_screen_entered():
 
 
 func _add_next_block() -> void:
-	var next := duplicate()
-	next.position.z -= 5
-	next.generate_obstacle = not generate_obstacle
-	next.no_obstacle_index = no_obstacle_index - 1
+	var next = load("res://city/block.tscn").instantiate()
+
+	if empty_block_counter > 0:
+		next.empty_block_counter = empty_block_counter - 1
+	else:
+		# Alternate which block has an obstacle
+		next.generate_obstacle = not generate_obstacle
+		next.empty_block_counter = 0
+	
 	get_parent().add_child(next)
+	
+	next.global_position = global_position
+	next.position.z -= 5
+	
 
 
 func _on_visible_on_screen_notifier_3d_screen_exited():
