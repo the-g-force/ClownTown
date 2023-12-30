@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://pog1f6cctk83"]
+[gd_scene load_steps=9 format=3 uid="uid://pog1f6cctk83"]
 
 [ext_resource type="PackedScene" uid="uid://dbhexktlm6ox4" path="res://player/player.tscn" id="1_8wopq"]
 [ext_resource type="Script" path="res://player_follow_camera.gd" id="2_inu3m"]
@@ -10,6 +10,16 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_xpiwl")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_svaw5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1hxkw"]
+
+[sub_resource type="Sky" id="Sky_nd37x"]
+sky_material = SubResource("ProceduralSkyMaterial_1hxkw")
+
+[sub_resource type="Environment" id="Environment_dhw07"]
+background_mode = 2
+sky = SubResource("Sky_nd37x")
+ambient_light_energy = 2.0
 
 [node name="World" type="Node3D"]
 
@@ -30,3 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 
 current = true
 script = ExtResource("2_inu3m")
 player = NodePath("../Player")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dhw07")
