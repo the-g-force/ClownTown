@@ -1,3 +1,4 @@
+class_name Player
 extends Area3D
 
 @export var lane_width := 6.0
