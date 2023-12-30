@@ -7,10 +7,10 @@ const PROJECTILE := preload("res://projectile/projectile.tscn")
 @export var lane_change_time := 0.5
 @export var forward_speed := 2.0
 @export var cooldown_time := 0.1
-@export_category("Projectile Impulse")
+@export_group("Projectile Impulse")
 @export var vertical_impulse := 5.0
 @export var horizontal_impulse := 10.0
-@export var forward_impulse := 2.0
+@export var forward_impulse := 10.0
 
 
 var _is_moving := false

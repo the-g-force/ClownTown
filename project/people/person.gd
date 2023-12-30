@@ -16,8 +16,8 @@ const FEMALE_PEOPLE := [
 ]
 
 var _is_clown := false
-var _model : Node3D
 
+@onready var _model : Node3D = $man_clown
 @onready var _gender := MALE if randi() % 2 == 0 else FEMALE
 
 
