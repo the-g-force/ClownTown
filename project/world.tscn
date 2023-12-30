@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://pog1f6cctk83"]
 
 [ext_resource type="PackedScene" uid="uid://dbhexktlm6ox4" path="res://player/player.tscn" id="1_8wopq"]
+[ext_resource type="Script" path="res://world.gd" id="1_g4tfx"]
 [ext_resource type="Script" path="res://people/models/player_follow_camera.gd" id="2_inu3m"]
 [ext_resource type="PackedScene" uid="uid://bqbu13mcbihai" path="res://people/person.tscn" id="3_5clvs"]
 [ext_resource type="PackedScene" uid="uid://bxivuld1w250u" path="res://city/block.tscn" id="4_fmgm5"]
 [ext_resource type="AudioStream" uid="uid://ccwowgtxr2bg1" path="res://circus.ogg" id="5_kvf5x"]
-[ext_resource type="PackedScene" uid="uid://bnbgo0m324cvo" path="res://ui/start_overlay.tscn" id="6_awyr0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tygjf"]
 
@@ -22,6 +22,7 @@ ambient_light_sky_contribution = 0.25
 ambient_light_energy = 0.9
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_g4tfx")
 
 [node name="Player" parent="." instance=ExtResource("1_8wopq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0011673)
@@ -48,11 +49,9 @@ process_mode = 3
 stream = ExtResource("5_kvf5x")
 autoplay = true
 
-[node name="StartOverlay" parent="." instance=ExtResource("6_awyr0")]
-
-[node name="Camera3D" type="Camera3D" parent="StartOverlay"]
-transform = Transform3D(1, 0, 0, 0, 0.576632, 0.817004, 0, -0.817004, 0.576632, 0, 6.10854, 1.15438)
-current = true
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.982287, -0.0118539, -0.187006, 0.187381, 0.0621403, 0.98032, 0, -0.997997, 0.0632608, -1.3216, 7.15438, 0)
+
+[node name="FirstTimeCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.576632, 0.817004, 0, -0.817004, 0.576632, 0, 6.10854, 1.15438)
+current = true
