@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cromt4kd1oiao"
-path.s3tc="res://.godot/imported/woman_clown_woman_clown.png-619ede0e6b1de35e0f13445965c5e142.s3tc.ctex"
+uid="uid://6la3mbios0iu"
+path.s3tc="res://.godot/imported/man_clown_man_clown.png-79ca568441a9ccfce400c577bba6e99b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://woman_clown_woman_clown.png"
-dest_files=["res://.godot/imported/woman_clown_woman_clown.png-619ede0e6b1de35e0f13445965c5e142.s3tc.ctex"]
+source_file="res://people/models/man_clown_man_clown.png"
+dest_files=["res://.godot/imported/man_clown_man_clown.png-79ca568441a9ccfce400c577bba6e99b.s3tc.ctex"]
 
 [params]
 

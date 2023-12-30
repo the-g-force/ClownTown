@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cvr62b2tdkrn7"
-path="res://.godot/imported/woman_not_clown.glb-57a60c1b851fdb1e1ba8af4ddb9d776f.scn"
+uid="uid://0h77uma7w6bf"
+path="res://.godot/imported/woman_clown.glb-98d4f387f191a3693a99042b895e5248.scn"
 
 [deps]
 
-source_file="res://woman_not_clown.glb"
-dest_files=["res://.godot/imported/woman_not_clown.glb-57a60c1b851fdb1e1ba8af4ddb9d776f.scn"]
+source_file="res://people/models/woman_clown.glb"
+dest_files=["res://.godot/imported/woman_clown.glb-98d4f387f191a3693a99042b895e5248.scn"]
 
 [params]
 

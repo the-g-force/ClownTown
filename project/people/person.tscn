@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqbu13mcbihai"]
 
 [ext_resource type="Script" path="res://people/person.gd" id="1_5lcpr"]
+[ext_resource type="PackedScene" uid="uid://cnbs1ht4lcjh0" path="res://people/models/man_clown.glb" id="2_g6qnc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tn85u"]
-size = Vector3(1, 10, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_iavo0"]
-size = Vector3(1, 10, 1)
+size = Vector3(0.580811, 1, 0.329041)
 
 [node name="Person" type="Area3D"]
 collision_layer = 8
@@ -14,9 +12,10 @@ collision_mask = 4
 script = ExtResource("1_5lcpr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_tn85u")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_iavo0")
+[node name="man_clown" parent="." instance=ExtResource("2_g6qnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

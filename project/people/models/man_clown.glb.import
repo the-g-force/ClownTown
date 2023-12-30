@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cnbs1ht4lcjh0"
-path="res://.godot/imported/man_clown.glb-50ad8a46dde83ba3c5ae44c5f8a03561.scn"
+path="res://.godot/imported/man_clown.glb-43e242619b661b6c2d392ab4a0902914.scn"
 
 [deps]
 
-source_file="res://man_clown.glb"
-dest_files=["res://.godot/imported/man_clown.glb-50ad8a46dde83ba3c5ae44c5f8a03561.scn"]
+source_file="res://people/models/man_clown.glb"
+dest_files=["res://.godot/imported/man_clown.glb-43e242619b661b6c2d392ab4a0902914.scn"]
 
 [params]
 

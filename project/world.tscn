@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://pog1f6cctk83"]
 
 [ext_resource type="PackedScene" uid="uid://dbhexktlm6ox4" path="res://player/player.tscn" id="1_8wopq"]
-[ext_resource type="Script" path="res://player_follow_camera.gd" id="2_inu3m"]
+[ext_resource type="Script" path="res://people/models/player_follow_camera.gd" id="2_inu3m"]
 [ext_resource type="PackedScene" uid="uid://bqbu13mcbihai" path="res://people/person.tscn" id="3_5clvs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpiwl"]
@@ -50,4 +50,4 @@ player = NodePath("../Player")
 environment = SubResource("Environment_dhw07")
 
 [node name="Person" parent="." instance=ExtResource("3_5clvs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55967, 0, -24.087)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.55967, 0, -24.087)

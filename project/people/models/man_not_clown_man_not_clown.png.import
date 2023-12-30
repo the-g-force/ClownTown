@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6la3mbios0iu"
-path.s3tc="res://.godot/imported/man_clown_man_clown.png-3a8ab25b2b8a333afe63e3a093946abe.s3tc.ctex"
+uid="uid://b7thrq16eqe5b"
+path.s3tc="res://.godot/imported/man_not_clown_man_not_clown.png-666ce2954ac00bf2e0ab9c07f4c1959d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://man_clown_man_clown.png"
-dest_files=["res://.godot/imported/man_clown_man_clown.png-3a8ab25b2b8a333afe63e3a093946abe.s3tc.ctex"]
+source_file="res://people/models/man_not_clown_man_not_clown.png"
+dest_files=["res://.godot/imported/man_not_clown_man_not_clown.png-666ce2954ac00bf2e0ab9c07f4c1959d.s3tc.ctex"]
 
 [params]
 
