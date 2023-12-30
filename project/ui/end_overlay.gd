@@ -8,7 +8,7 @@ var converts := 0
 
 func _ready():
 	get_tree().paused = true
-	_report_label.text = "You threw %s pies and \n converted %s people to \n CLOWNDOM!" % [pies_thrown, converts]
+	_report_label.text = "You threw %s pies and \n turned %s people into clowns!" % [pies_thrown, converts]
 
 
 func _on_play_again_button_pressed():

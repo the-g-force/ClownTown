@@ -37,7 +37,7 @@ theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("4_b0rkk")
 theme_override_font_sizes/font_size = 40
 text = "You threw X pies and 
-converted Y people to CLOWNDOM!"
+turned Y people into clowns!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
