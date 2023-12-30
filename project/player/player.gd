@@ -2,6 +2,7 @@ class_name Player
 extends Area3D
 
 const PROJECTILE := preload("res://projectile/projectile.tscn")
+const _PIE_ROTATION_SPEED := 0.1
 
 @export var lane_width := 6.0
 @export var lane_change_time := 0.5
@@ -18,6 +19,7 @@ var _current_lane := 1
 
 @onready var _throw_sound := $ThrowSound
 @onready var _crash_sound := $CrashSound
+@onready var _pie_stand : Node3D = %PieStand
 
 func _process(delta:float)->void:
 	var direction : int = sign(Input.get_axis("move_left", "move_right"))
@@ -29,6 +31,8 @@ func _process(delta:float)->void:
 	if shoot_direction != 0 and _can_shoot:
 		_shoot(shoot_direction)
 	position.z -= forward_speed * delta
+	
+	_pie_stand.rotate_object_local(Vector3.UP, _PIE_ROTATION_SPEED)
 
 
 func _change_lanes(direction:int)->void:

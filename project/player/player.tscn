@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbhexktlm6ox4"]
+[gd_scene load_steps=10 format=3 uid="uid://dbhexktlm6ox4"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_i2emj"]
 [ext_resource type="PackedScene" uid="uid://sulwccm2q46g" path="res://player/clown_car.glb" id="2_mjiaw"]
 [ext_resource type="AudioStream" uid="uid://b44d2um4emy1f" path="res://sfx/throwing-item.wav" id="3_oc0rh"]
 [ext_resource type="AudioStream" uid="uid://ddijxifvmfagv" path="res://player/crash.wav" id="4_0vvrd"]
+[ext_resource type="PackedScene" uid="uid://sptan1ktd1u2" path="res://projectile/pie.glb" id="5_lspv1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6d70y"]
 size = Vector3(1, 1.5, 2.5)
@@ -80,6 +81,13 @@ shape = SubResource("BoxShape3D_6d70y")
 
 [node name="clown_car" parent="." instance=ExtResource("2_mjiaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="PieStand" type="Node3D" parent="clown_car"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.810986, 0.712026)
+
+[node name="Pie" parent="clown_car/PieStand" instance=ExtResource("5_lspv1")]
+transform = Transform3D(1, 0, 0, 0, 0.952188, -0.305513, 0, 0.305513, 0.952188, 0, 0, 0)
 
 [node name="ThrowSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_oc0rh")
