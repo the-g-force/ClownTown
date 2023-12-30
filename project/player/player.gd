@@ -6,16 +6,17 @@ const PROJECTILE := preload("res://projectile/projectile.tscn")
 @export var lane_width := 6.0
 @export var lane_change_time := 0.5
 @export var forward_speed := 2.0
-@export var cooldown_time := 0.1
+@export var cooldown_time := 0.5
 @export_group("Projectile Impulse")
 @export var vertical_impulse := 5.0
 @export var horizontal_impulse := 10.0
 @export var forward_impulse := 10.0
 
-
 var _is_moving := false
 var _can_shoot := true
 var _current_lane := 1
+
+@onready var _throw_sound : AudioStreamPlayer3D = $ThrowSound
 
 
 func _process(delta:float)->void:
@@ -39,6 +40,7 @@ func _change_lanes(direction:int)->void:
 
 
 func _shoot(direction:int)->void:
+	_throw_sound.play()
 	_can_shoot = false
 	var projectile := PROJECTILE.instantiate()
 	get_parent().add_child(projectile)

@@ -18,6 +18,7 @@ const FEMALE_PEOPLE := [
 var _is_clown := false
 
 @onready var _model : Node3D = $man_clown
+@onready var _got_hit_sound : AudioStreamPlayer3D = $GotHitSound
 @onready var _gender := MALE if randi() % 2 == 0 else FEMALE
 
 
@@ -44,6 +45,7 @@ func _on_body_entered(body:PhysicsBody3D)->void:
 
 func _make_clown()->void:
 	_is_clown = true
+	_got_hit_sound.play()
 	if _gender == MALE:
 		_make_model(MALE_CLOWNS.pick_random())
 	else:
