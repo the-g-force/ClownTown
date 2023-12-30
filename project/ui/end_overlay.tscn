@@ -32,12 +32,12 @@ offset_right = 300.0
 offset_bottom = 195.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0.247059, 0.258824, 0.298039, 1)
+theme_override_colors/font_outline_color = Color(0.443137, 0.364706, 0.556863, 1)
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("4_b0rkk")
 theme_override_font_sizes/font_size = 40
 text = "You threw X pies and 
-turned Y people into clowns!"
+converted Y people to CLOWNDOM!"
 horizontal_alignment = 1
 autowrap_mode = 2
 

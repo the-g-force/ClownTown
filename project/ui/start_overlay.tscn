@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnbgo0m324cvo"]
+[gd_scene load_steps=6 format=3 uid="uid://bnbgo0m324cvo"]
 
 [ext_resource type="Theme" uid="uid://dr120ulnuan3u" path="res://ui/theme.tres" id="1_gkxdf"]
 [ext_resource type="Script" path="res://ui/start_overlay.gd" id="1_k2jxy"]
 [ext_resource type="Texture2D" uid="uid://cdfsc7co1yjfj" path="res://ui/logo.png" id="2_5akav"]
+[ext_resource type="FontFile" uid="uid://b7c1byhpn0kj5" path="res://ui/Kelpo.otf" id="4_om438"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3kk6"]
+font = ExtResource("4_om438")
+font_size = 40
+outline_size = 4
+outline_color = Color(0.443137, 0.364706, 0.556863, 1)
 
 [node name="StartOverlay" type="Control"]
 layout_mode = 3
@@ -33,5 +40,23 @@ offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "PLAY"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -259.0
+offset_right = 78.5
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Steer: A D
+Throw: Q E"
+label_settings = SubResource("LabelSettings_h3kk6")
+horizontal_alignment = 2
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
