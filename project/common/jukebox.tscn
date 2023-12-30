@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ad2un1fwmya"]
+
+[ext_resource type="AudioStream" uid="uid://ccwowgtxr2bg1" path="res://common/circus.ogg" id="1_c27hk"]
+
+[node name="Jukebox" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_c27hk")
+autoplay = true
