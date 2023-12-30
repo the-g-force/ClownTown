@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bqyf3j3ap8ii7"
-path="res://.godot/imported/getting-hit.wav-661ae6663745d0dca267339c19874d33.sample"
+uid="uid://bp0l2h17k8efc"
+path="res://.godot/imported/horn.wav-8d0d7b6e2e673930ab853aa380b5c531.sample"
 
 [deps]
 
-source_file="res://sfx/getting-hit.wav"
-dest_files=["res://.godot/imported/getting-hit.wav-661ae6663745d0dca267339c19874d33.sample"]
+source_file="res://people/horn.wav"
+dest_files=["res://.godot/imported/horn.wav-8d0d7b6e2e673930ab853aa380b5c531.sample"]
 
 [params]
 
