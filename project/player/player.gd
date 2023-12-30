@@ -13,9 +13,11 @@ const _PIE_ROTATION_SPEED := 0.1
 @export var horizontal_impulse := 10.0
 @export var forward_impulse := 10.0
 
+var converts := 0
 var _is_moving := false
 var _can_shoot := true
 var _current_lane := 1
+var _pies_thrown := 0
 
 @onready var _throw_sound := $ThrowSound
 @onready var _crash_sound := $CrashSound
@@ -44,11 +46,13 @@ func _change_lanes(direction:int)->void:
 
 
 func _shoot(direction:int)->void:
+	_pies_thrown += 1
 	_throw_sound.play()
 	_can_shoot = false
 	var projectile := PROJECTILE.instantiate()
 	get_parent().add_child(projectile)
 	projectile.global_position = global_position
+	projectile.player = self
 	projectile.angular_velocity = Vector3(-2.0, 0, 0)
 	var projectile_impulse := Vector3(direction * horizontal_impulse, vertical_impulse, -forward_speed - forward_impulse)
 	projectile.apply_central_impulse(projectile_impulse)
@@ -58,5 +62,7 @@ func _shoot(direction:int)->void:
 
 func _on_body_entered(_body:PhysicsBody3D)->void:
 	var overlay := preload("res://ui/end_overlay.tscn").instantiate()
+	overlay.pies_thrown = _pies_thrown
+	overlay.converts = converts
 	get_parent().add_child(overlay)
 	_crash_sound.play()

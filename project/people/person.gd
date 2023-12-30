@@ -41,7 +41,7 @@ func _make_model(path:String)->void:
 func _on_body_entered(body:PhysicsBody3D)->void:
 	if body is Projectile and not _is_clown:
 		_make_clown()
-		body.queue_free()
+		body.resolve_made_clown()
 
 
 func _make_clown()->void:

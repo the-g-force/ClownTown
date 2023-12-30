@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvenhv8gamt7v"]
+[gd_scene load_steps=5 format=3 uid="uid://dvenhv8gamt7v"]
 
 [ext_resource type="Theme" uid="uid://dr120ulnuan3u" path="res://ui/theme.tres" id="1_aulaj"]
 [ext_resource type="Script" path="res://ui/end_overlay.gd" id="2_dfvqn"]
 [ext_resource type="Texture2D" uid="uid://cdfsc7co1yjfj" path="res://ui/logo.png" id="2_wyjvs"]
+[ext_resource type="FontFile" uid="uid://b7c1byhpn0kj5" path="res://ui/Kelpo.otf" id="4_b0rkk"]
 
 [node name="EndOverlay" type="Control"]
 layout_mode = 3
@@ -17,6 +18,28 @@ script = ExtResource("2_dfvqn")
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(574, 206)
 texture = ExtResource("2_wyjvs")
+
+[node name="ReportLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.247059, 0.258824, 0.298039, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("4_b0rkk")
+theme_override_font_sizes/font_size = 50
+text = "You threw X pies and 
+converted Y people to CLOWNDOM!"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="PlayAgainButton" type="Button" parent="."]
 process_mode = 2
