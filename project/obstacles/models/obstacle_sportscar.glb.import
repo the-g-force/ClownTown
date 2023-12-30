@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://iitnaesnxaa4"
-path="res://.godot/imported/obstacle_sportscar.glb-f65642046a44ad10f198ee0d3c2f3640.scn"
+path="res://.godot/imported/obstacle_sportscar.glb-268d0cf5061b2d27d87f7fc5ccb3981d.scn"
 
 [deps]
 
-source_file="res://obstacles/obstacle_sportscar.glb"
-dest_files=["res://.godot/imported/obstacle_sportscar.glb-f65642046a44ad10f198ee0d3c2f3640.scn"]
+source_file="res://obstacles/models/obstacle_sportscar.glb"
+dest_files=["res://.godot/imported/obstacle_sportscar.glb-268d0cf5061b2d27d87f7fc5ccb3981d.scn"]
 
 [params]
 

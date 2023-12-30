@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cuni6jeodbp8d"
-path="res://.godot/imported/obstacle_semi.glb-e0b6bd651aa182d2ed797f8de2906cf2.scn"
+path="res://.godot/imported/obstacle_semi.glb-9aa7075fc8846a35a72cbeaf9c2989ec.scn"
 
 [deps]
 
-source_file="res://obstacles/obstacle_semi.glb"
-dest_files=["res://.godot/imported/obstacle_semi.glb-e0b6bd651aa182d2ed797f8de2906cf2.scn"]
+source_file="res://obstacles/models/obstacle_semi.glb"
+dest_files=["res://.godot/imported/obstacle_semi.glb-9aa7075fc8846a35a72cbeaf9c2989ec.scn"]
 
 [params]
 

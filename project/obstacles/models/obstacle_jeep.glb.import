@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dr22u2a4r182n"
-path="res://.godot/imported/obstacle_convertable.glb-f14d8fbde5828ffc019a24ce3cb7c75f.scn"
+uid="uid://pr67g4qfx6ip"
+path="res://.godot/imported/obstacle_jeep.glb-8497ca566b3dbba2118bd3a89ffac3ba.scn"
 
 [deps]
 
-source_file="res://obstacles/obstacle_convertable.glb"
-dest_files=["res://.godot/imported/obstacle_convertable.glb-f14d8fbde5828ffc019a24ce3cb7c75f.scn"]
+source_file="res://obstacles/models/obstacle_jeep.glb"
+dest_files=["res://.godot/imported/obstacle_jeep.glb-8497ca566b3dbba2118bd3a89ffac3ba.scn"]
 
 [params]
 

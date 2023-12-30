@@ -1,20 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://pog1f6cctk83"]
+[gd_scene load_steps=9 format=3 uid="uid://pog1f6cctk83"]
 
 [ext_resource type="PackedScene" uid="uid://dbhexktlm6ox4" path="res://player/player.tscn" id="1_8wopq"]
 [ext_resource type="Script" path="res://people/models/player_follow_camera.gd" id="2_inu3m"]
 [ext_resource type="PackedScene" uid="uid://bqbu13mcbihai" path="res://people/person.tscn" id="3_5clvs"]
 [ext_resource type="PackedScene" uid="uid://bxivuld1w250u" path="res://city/block.tscn" id="4_fmgm5"]
 [ext_resource type="AudioStream" uid="uid://ccwowgtxr2bg1" path="res://circus.ogg" id="5_kvf5x"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpiwl"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_x7a3a"]
-material = SubResource("StandardMaterial3D_xpiwl")
-size = Vector3(1, 1, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_svaw5"]
-size = Vector3(1, 1, 5)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1hxkw"]
 
@@ -32,38 +22,7 @@ sky = SubResource("Sky_nd37x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0011673)
 lane_width = 2.0
 lane_change_time = 0.4
-forward_speed = 8.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-mesh = SubResource("BoxMesh_x7a3a")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0264282)
-shape = SubResource("BoxShape3D_svaw5")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -20)
-mesh = SubResource("BoxMesh_x7a3a")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
-shape = SubResource("BoxShape3D_svaw5")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -30)
-mesh = SubResource("BoxMesh_x7a3a")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
-shape = SubResource("BoxShape3D_svaw5")
+forward_speed = 6.0
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 0.757633, 0.65268, 0, -0.65268, 0.757633, 0, 3.62015, 6.14931)
