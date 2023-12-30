@@ -20,8 +20,8 @@ var generate_obstacle := false
 ## Counts the number of empty blocks at the start of the game (without obstacles)
 var empty_block_counter := 3
 
-@onready var building_marker_left := $Building_Left
-@onready var building_marker_right := $Building_Right
+@onready var _building_marker_left := $Building_Left
+@onready var _building_marker_right := $Building_Right
 
 
 func _ready()->void:
@@ -31,10 +31,9 @@ func _ready()->void:
 		call_deferred("_generate_person")
 		
 	# Create buildings
-	var building_left :Node3D = BUILDINGS.pick_random().instantiate()
-	building_marker_left.add_child(building_left)
-	var building_right :Node3D = BUILDINGS.pick_random().instantiate()
-	building_marker_right.add_child(building_right)
+	for marker in [_building_marker_left, _building_marker_right]:
+		var building :Node3D = BUILDINGS.pick_random().instantiate()
+		marker.add_child(building)
 
 
 func _generate_person()->void:
