@@ -14,3 +14,5 @@ shape = SubResource("BoxShape3D_6d70y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_6tfk3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -23,3 +23,7 @@ func _change_lanes(direction:int)->void:
 	await create_tween().tween_property(self, "position:x", target_position, lane_change_time).finished
 	_current_lane += direction
 	_is_moving = false
+
+
+func _on_body_entered(_body:PhysicsBody3D)->void:
+	print("whammo")
