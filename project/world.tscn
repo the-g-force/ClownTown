@@ -31,7 +31,6 @@ forward_speed = 6.0
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 0.757633, 0.65268, 0, -0.65268, 0.757633, 0, 3.62015, 6.14931)
-current = true
 script = ExtResource("2_inu3m")
 player = NodePath("../Player")
 distance_behind_player = 2.0
