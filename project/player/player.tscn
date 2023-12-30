@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbhexktlm6ox4"]
+[gd_scene load_steps=9 format=3 uid="uid://dbhexktlm6ox4"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_i2emj"]
 [ext_resource type="PackedScene" uid="uid://sulwccm2q46g" path="res://player/clown_car.glb" id="2_mjiaw"]
 [ext_resource type="AudioStream" uid="uid://b44d2um4emy1f" path="res://sfx/throwing-item.wav" id="3_oc0rh"]
+[ext_resource type="AudioStream" uid="uid://ddijxifvmfagv" path="res://player/crash.wav" id="4_0vvrd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6d70y"]
 size = Vector3(1, 1.5, 2.5)
@@ -80,7 +81,7 @@ shape = SubResource("BoxShape3D_6d70y")
 [node name="clown_car" parent="." instance=ExtResource("2_mjiaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="ThrowSound" type="AudioStreamPlayer3D" parent="."]
+[node name="ThrowSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_oc0rh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -88,5 +89,8 @@ libraries = {
 "": SubResource("AnimationLibrary_8ihp8")
 }
 autoplay = "bob"
+
+[node name="CrashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0vvrd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

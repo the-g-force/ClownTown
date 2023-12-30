@@ -16,8 +16,8 @@ var _is_moving := false
 var _can_shoot := true
 var _current_lane := 1
 
-@onready var _throw_sound : AudioStreamPlayer3D = $ThrowSound
-
+@onready var _throw_sound := $ThrowSound
+@onready var _crash_sound := $CrashSound
 
 func _process(delta:float)->void:
 	var direction : int = sign(Input.get_axis("move_left", "move_right"))
@@ -55,3 +55,4 @@ func _shoot(direction:int)->void:
 func _on_body_entered(_body:PhysicsBody3D)->void:
 	var overlay := preload("res://ui/end_overlay.tscn").instantiate()
 	get_parent().add_child(overlay)
+	_crash_sound.play()
