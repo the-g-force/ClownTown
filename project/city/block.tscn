@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxivuld1w250u"]
+[gd_scene load_steps=7 format=3 uid="uid://bxivuld1w250u"]
 
 [ext_resource type="Script" path="res://city/block.gd" id="1_tqbub"]
 
@@ -7,24 +7,48 @@ albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qvxs7"]
 material = SubResource("StandardMaterial3D_twmwn")
-size = Vector3(10, 1, 5)
+size = Vector3(6, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0prmv"]
-size = Vector3(10, 1, 5)
+size = Vector3(6, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wqb7w"]
+size = Vector3(1, 0.25, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dqx2"]
+size = Vector3(1, 0.25, 5)
 
 [node name="Block" type="Node3D"]
 script = ExtResource("1_tqbub")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Road" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Road"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_qvxs7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_0prmv")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[node name="Sidewalk_Right" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sidewalk_Right"]
+mesh = SubResource("BoxMesh_wqb7w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sidewalk_Right"]
+shape = SubResource("BoxShape3D_0dqx2")
+
+[node name="Sidewalk_Left" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sidewalk_Left"]
+mesh = SubResource("BoxMesh_wqb7w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sidewalk_Left"]
+shape = SubResource("BoxShape3D_0dqx2")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
