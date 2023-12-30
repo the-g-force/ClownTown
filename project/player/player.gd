@@ -27,4 +27,4 @@ func _change_lanes(direction:int)->void:
 
 
 func _on_body_entered(_body:PhysicsBody3D)->void:
-	print("whammo")
+	get_tree().call_deferred("change_scene_to_file", "res://screens/end_game_screen.tscn")
