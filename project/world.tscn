@@ -18,8 +18,8 @@ sky_material = SubResource("ProceduralSkyMaterial_1hxkw")
 
 [sub_resource type="Environment" id="Environment_dhw07"]
 background_mode = 2
+background_energy_multiplier = 1.5
 sky = SubResource("Sky_nd37x")
-ambient_light_energy = 2.0
 
 [node name="World" type="Node3D"]
 
