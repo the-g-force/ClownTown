@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Jukebox="*res://common/jukebox.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_left={
