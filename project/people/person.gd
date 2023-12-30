@@ -17,9 +17,10 @@ const FEMALE_PEOPLE := [
 
 var _is_clown := false
 
-@onready var _model : Node3D = $man_clown
+@onready var _model : Node3D = $Node3D/man_clown
 @onready var _got_hit_sound : AudioStreamPlayer3D = $GotHitSound
 @onready var _gender := MALE if randi() % 2 == 0 else FEMALE
+@onready var _animation_player : AnimationPlayer = $AnimationPlayer
 
 
 func _ready()->void:
@@ -33,7 +34,7 @@ func _make_model(path:String)->void:
 	if is_instance_valid(_model):
 		_model.queue_free()
 	_model = load(path).instantiate()
-	add_child(_model)
+	$Node3D.add_child(_model)
 	_model.position = $CollisionShape3D.position
 
 
@@ -46,6 +47,7 @@ func _on_body_entered(body:PhysicsBody3D)->void:
 func _make_clown()->void:
 	_is_clown = true
 	_got_hit_sound.play()
+	_animation_player.play("bob")
 	if _gender == MALE:
 		_make_model(MALE_CLOWNS.pick_random())
 	else:

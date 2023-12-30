@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqbu13mcbihai"]
+[gd_scene load_steps=8 format=3 uid="uid://bqbu13mcbihai"]
 
 [ext_resource type="Script" path="res://people/person.gd" id="1_5lcpr"]
 [ext_resource type="PackedScene" uid="uid://cnbs1ht4lcjh0" path="res://people/models/man_clown.glb" id="2_g6qnc"]
@@ -6,6 +6,68 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tn85u"]
 size = Vector3(0.580811, 1, 0.329041)
+
+[sub_resource type="Animation" id="Animation_7fgkr"]
+resource_name = "bob"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(0.6, 1.4, 0.6, 1.4),
+"update": 0,
+"values": [Vector3(0, 0.1, 0), Vector3(-0.1, 0, 0), Vector3(0, 0.1, 0), Vector3(0.1, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(0.6, 1.4, 0.6, 1.4),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.15708), Vector3(0, 0, 0), Vector3(0, 0, -0.15708)]
+}
+
+[sub_resource type="Animation" id="Animation_4i38r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32xio"]
+_data = {
+"RESET": SubResource("Animation_4i38r"),
+"bob": SubResource("Animation_7fgkr")
+}
 
 [node name="Person" type="Area3D"]
 collision_layer = 8
@@ -16,13 +78,21 @@ script = ExtResource("1_5lcpr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_tn85u")
 
-[node name="man_clown" parent="." instance=ExtResource("2_g6qnc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="man_clown" parent="Node3D" instance=ExtResource("2_g6qnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49012e-08, 0.5, 0)
 
 [node name="GotHitSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_6j87g")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_32xio")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
