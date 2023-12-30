@@ -1,26 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://dk4xg7f8r1f0x"]
 
 [ext_resource type="Script" path="res://projectile/projectile.gd" id="1_mleoo"]
+[ext_resource type="PackedScene" uid="uid://sptan1ktd1u2" path="res://projectile/pie.glb" id="2_j6poe"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_m5828"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_kjkkt"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_j5avm"]
+size = Vector3(0.4, 0.4, 0.15)
 
 [node name="Projectile" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 collision_layer = 4
 collision_mask = 10
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_mleoo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_m5828")
+[node name="pie" parent="." instance=ExtResource("2_j6poe")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_kjkkt")
-
-[node name="Timer" type="Timer" parent="."]
+[node name="LifetimeTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_j5avm")
+
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

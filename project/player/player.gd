@@ -45,6 +45,7 @@ func _shoot(direction:int)->void:
 	var projectile := PROJECTILE.instantiate()
 	get_parent().add_child(projectile)
 	projectile.global_position = global_position
+	projectile.angular_velocity = Vector3(-2.0, 0, 0)
 	var projectile_impulse := Vector3(direction * horizontal_impulse, vertical_impulse, -forward_speed - forward_impulse)
 	projectile.apply_central_impulse(projectile_impulse)
 	await get_tree().create_timer(cooldown_time).timeout
