@@ -4,6 +4,7 @@ signal play_pressed
 
 func _ready():
 	get_tree().paused = true
+	$PlayButton.grab_focus()
 
 
 func _on_play_button_pressed():
