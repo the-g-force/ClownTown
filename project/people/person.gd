@@ -50,3 +50,7 @@ func _make_clown()->void:
 		_make_model(MALE_CLOWNS.pick_random())
 	else:
 		_make_model(FEMALE_CLOWNS.pick_random())
+
+
+func _on_visible_on_screen_notifier_3d_screen_exited()->void:
+	queue_free()
