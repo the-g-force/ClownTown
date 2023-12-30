@@ -2,6 +2,14 @@ extends Node3D
 
 const PERSON := preload("res://people/person.tscn")
 
+const OBSTACLES := [
+	preload("res://obstacles/convertible.tscn"),
+	preload("res://obstacles/jeep.tscn"),
+	preload("res://obstacles/semi.tscn"),
+	preload("res://obstacles/sports_car.tscn"),
+	preload("res://obstacles/truck.tscn"),
+]
+
 var generate_obstacle := false
 var no_obstacle_index := 3
 
@@ -26,14 +34,15 @@ func _generate_person()->void:
 
 
 func _generate_obstacle()->void:
-	var obstacle_position := Vector3(
+	var lane_offset := Vector3(
 		[-2.0, 0.0, 2.0].pick_random(),
 		0.0,
 		0.0
 	)
-	var obstacle := preload("res://obstacles/obstacle.tscn").instantiate()
+	var obstacle :StaticBody3D = OBSTACLES.pick_random().instantiate()
 	get_parent().add_child(obstacle)
-	obstacle.global_position = global_position + obstacle_position
+	obstacle.rotate_y(TAU/2)
+	obstacle.global_position = global_position + lane_offset
 
 
 func _on_visible_on_screen_notifier_3d_screen_entered():
