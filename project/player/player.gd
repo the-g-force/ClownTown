@@ -53,4 +53,5 @@ func _shoot(direction:int)->void:
 
 
 func _on_body_entered(_body:PhysicsBody3D)->void:
-	get_tree().call_deferred("change_scene_to_file", "res://screens/end_game_screen.tscn")
+	var overlay := preload("res://ui/end_overlay.tscn").instantiate()
+	get_parent().add_child(overlay)

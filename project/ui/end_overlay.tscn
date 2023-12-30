@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvenhv8gamt7v"]
+
+[ext_resource type="Theme" uid="uid://dr120ulnuan3u" path="res://ui/theme.tres" id="1_aulaj"]
+[ext_resource type="Script" path="res://ui/end_overlay.gd" id="2_dfvqn"]
+[ext_resource type="Texture2D" uid="uid://cdfsc7co1yjfj" path="res://ui/logo.png" id="2_wyjvs"]
+
+[node name="EndOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_aulaj")
+script = ExtResource("2_dfvqn")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(574, 206)
+texture = ExtResource("2_wyjvs")
+
+[node name="PlayAgainButton" type="Button" parent="."]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -116.0
+offset_right = 90.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Play Again"
+
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
