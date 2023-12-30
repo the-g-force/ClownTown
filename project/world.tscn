@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://pog1f6cctk83"]
+[gd_scene load_steps=10 format=3 uid="uid://pog1f6cctk83"]
 
 [ext_resource type="PackedScene" uid="uid://dbhexktlm6ox4" path="res://player/player.tscn" id="1_8wopq"]
 [ext_resource type="Script" path="res://player_follow_camera.gd" id="2_inu3m"]
+[ext_resource type="PackedScene" uid="uid://bqbu13mcbihai" path="res://people/person.tscn" id="3_5clvs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpiwl"]
 albedo_color = Color(1, 0, 0, 1)
@@ -25,21 +26,28 @@ sky = SubResource("Sky_nd37x")
 
 [node name="Player" parent="." instance=ExtResource("1_8wopq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0011673)
+lane_width = 2.0
+lane_change_time = 0.4
+forward_speed = 4.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10.0313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04435, 0, -10.0313)
 mesh = SubResource("BoxMesh_x7a3a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_svaw5")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2.34962, 6.14931)
+transform = Transform3D(1, 0, 0, 0, 0.907624, 0.419785, 0, -0.419785, 0.907624, 0, 3.62015, 6.14931)
 current = true
 script = ExtResource("2_inu3m")
 player = NodePath("../Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dhw07")
+
+[node name="Person" parent="." instance=ExtResource("3_5clvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55967, 0, -24.087)

@@ -1,11 +1,20 @@
 class_name Player
 extends Area3D
 
+const PROJECTILE := preload("res://projectile/projectile.tscn")
+
 @export var lane_width := 6.0
 @export var lane_change_time := 0.5
 @export var forward_speed := 2.0
+@export var cooldown_time := 0.1
+@export_category("Projectile Impulse")
+@export var vertical_impulse := 5.0
+@export var horizontal_impulse := 10.0
+@export var forward_impulse := 2.0
+
 
 var _is_moving := false
+var _can_shoot := true
 var _current_lane := 1
 
 
@@ -15,6 +24,9 @@ func _process(delta:float)->void:
 		var new_lane := _current_lane + direction
 		if new_lane <= 2 and new_lane >= 0:
 			_change_lanes(direction)
+	var shoot_direction : int = sign(Input.get_axis("shoot_left", "shoot_right"))
+	if shoot_direction != 0 and _can_shoot:
+		_shoot(shoot_direction)
 	position.z -= forward_speed * delta
 
 
@@ -24,6 +36,17 @@ func _change_lanes(direction:int)->void:
 	await create_tween().tween_property(self, "position:x", target_position, lane_change_time).finished
 	_current_lane += direction
 	_is_moving = false
+
+
+func _shoot(direction:int)->void:
+	_can_shoot = false
+	var projectile := PROJECTILE.instantiate()
+	get_parent().add_child(projectile)
+	projectile.global_position = global_position
+	var projectile_impulse := Vector3(direction * horizontal_impulse, vertical_impulse, -forward_speed - forward_impulse)
+	projectile.apply_central_impulse(projectile_impulse)
+	await get_tree().create_timer(cooldown_time).timeout
+	_can_shoot = true
 
 
 func _on_body_entered(_body:PhysicsBody3D)->void:
