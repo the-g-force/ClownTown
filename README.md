@@ -1,6 +1,6 @@
 # Clown Town
 
-A Fam Jam Game from [the G-Force](https://the-g-force.github.io/).
+A Fam Jam Game from [the G-Force](https://the-g-force.github.io/) created on December 30, 2023.
 
 ## Instructions
 
