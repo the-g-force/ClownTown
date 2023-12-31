@@ -14,3 +14,7 @@ Created with:
  - [Godot Engine 4.2.1](https://godotengine.org/)
  - [Asset Forge 2.4.0](https://kenney.itch.io/assetforge-deluxe)
  - [LMMS 1.2.2](https://lmms.io/)
+
+## Third-Party Assets
+
+- [Kelpo font demo](https://www.dafont.com/kelpo.font) by Dharmas Studio, free for personal use
