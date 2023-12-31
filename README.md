@@ -6,6 +6,8 @@ A Fam Jam Game from [the G-Force](https://the-g-force.github.io/) created on Dec
 
 Did you know that some people are not clowns? See what you can do to help the situation by steering your clown car with A and D and then throwing pies with Q and E.
 
+Download Windows or Linux builds from the [Releases](https://github.com/the-g-force/ClownTown/releases) page.
+
 ## About
 
 Created with:
