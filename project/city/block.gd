@@ -2,9 +2,12 @@ extends Node3D
 
 const PERSON := preload("res://people/person.tscn")
 const BUILDINGS := [
+	preload("res://city/brownstone.tscn"),
 	preload("res://city/barn.tscn"),
 	preload("res://city/building.tscn"),
 	preload("res://city/canopy.tscn"),
+	preload("res://city/factory_1.tscn"),
+	preload("res://city/factory_2.tscn"),
 ]
 
 const OBSTACLES := [
