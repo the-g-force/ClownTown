@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode world_vertex_coords, cull_disabled, vertex_lighting;
+render_mode world_vertex_coords, cull_disabled, depth_prepass_alpha, vertex_lighting;
 
 uniform float curvature = 5.0;
 uniform float curvature_distance = 25.0;
