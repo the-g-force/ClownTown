@@ -9,6 +9,7 @@ shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
 shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
 shader_parameter/roughness = 0.0
 shader_parameter/color = Color(0.0588235, 0.0588235, 0.0431373, 1)
 
@@ -25,6 +26,7 @@ shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
 shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
 shader_parameter/roughness = 0.0
 shader_parameter/color = Color(0.737255, 0.737255, 0.686275, 1)
 
@@ -41,6 +43,7 @@ shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
 shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
 shader_parameter/roughness = 0.0
 shader_parameter/color = Color(0.0980392, 0.360784, 0.0431373, 1)
 

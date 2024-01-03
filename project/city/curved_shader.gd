@@ -9,5 +9,6 @@ func _ready():
 		set_surface_override_material(i, new_material)
 		
 		new_material.set_shader_parameter("color", material.albedo_color)
-		new_material.set_shader_parameter("metallic", material.metallic)
 		new_material.set_shader_parameter("roughness", material.roughness)
+		new_material.set_shader_parameter("metallic", material.metallic)		
+		new_material.set_shader_parameter("specular", material.metallic_specular)

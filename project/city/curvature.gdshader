@@ -5,6 +5,7 @@ render_mode world_vertex_coords, cull_disabled, depth_prepass_alpha, vertex_ligh
 uniform float curvature = 5.0;
 uniform float curvature_distance = 25.0;
 uniform float metallic = 0.0;
+uniform float specular = 0.5;
 uniform float roughness = 1.0;
 uniform vec3 color : source_color = vec3(0.0, 0.0, 0.0);
 
@@ -18,5 +19,5 @@ void fragment() {
 	ALBEDO = color;
 	METALLIC = metallic;
 	ROUGHNESS = roughness;
-	SPECULAR = 0.5;
+	SPECULAR = specular;
 }
