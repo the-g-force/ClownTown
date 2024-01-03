@@ -1,14 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bxivuld1w250u"]
+[gd_scene load_steps=13 format=3 uid="uid://bxivuld1w250u"]
 
 [ext_resource type="Script" path="res://city/block.gd" id="1_tqbub"]
 [ext_resource type="Shader" path="res://city/curvature.gdshader" id="2_vxa82"]
-
-[sub_resource type="Gradient" id="Gradient_xyvjb"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.0142752, 0.0142752, 0.0142752, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qsxgk"]
-gradient = SubResource("Gradient_xyvjb")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0wts"]
 render_priority = 0
@@ -16,7 +9,8 @@ shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
 shader_parameter/metallic = 0.0
-shader_parameter/base_texture = SubResource("GradientTexture1D_qsxgk")
+shader_parameter/roughness = 0.0
+shader_parameter/color = Color(0.0588235, 0.0588235, 0.0431373, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qvxs7"]
 material = SubResource("ShaderMaterial_t0wts")
@@ -25,21 +19,14 @@ size = Vector3(6, 1, 5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0prmv"]
 size = Vector3(6, 1, 5)
 
-[sub_resource type="Gradient" id="Gradient_1ve0p"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.619777, 0.621118, 0.584325, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2o8yc"]
-gradient = SubResource("Gradient_1ve0p")
-width = 1
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f08jo"]
 render_priority = 0
 shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
 shader_parameter/metallic = 0.0
-shader_parameter/base_texture = SubResource("GradientTexture1D_2o8yc")
+shader_parameter/roughness = 0.0
+shader_parameter/color = Color(0.737255, 0.737255, 0.686275, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wqb7w"]
 material = SubResource("ShaderMaterial_f08jo")
@@ -48,21 +35,14 @@ size = Vector3(1, 0.25, 5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0dqx2"]
 size = Vector3(1, 0.25, 5)
 
-[sub_resource type="Gradient" id="Gradient_n0eqi"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.0385444, 0.1177, 0.0435738, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1g3hm"]
-gradient = SubResource("Gradient_n0eqi")
-width = 1
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h5ank"]
 render_priority = 0
 shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
 shader_parameter/metallic = 0.0
-shader_parameter/base_texture = SubResource("GradientTexture1D_1g3hm")
+shader_parameter/roughness = 0.0
+shader_parameter/color = Color(0.0980392, 0.360784, 0.0431373, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_t6wuu"]
 material = SubResource("ShaderMaterial_h5ank")

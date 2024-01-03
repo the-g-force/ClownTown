@@ -4,8 +4,9 @@ render_mode world_vertex_coords, cull_disabled, depth_prepass_alpha, vertex_ligh
 
 uniform float curvature = 5.0;
 uniform float curvature_distance = 25.0;
-uniform sampler2D base_texture;
 uniform float metallic = 0.0;
+uniform float roughness = 1.0;
+uniform vec3 color : source_color = vec3(0.0, 0.0, 0.0);
 
 void vertex() {
 	NORMAL = (MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz;
@@ -14,12 +15,8 @@ void vertex() {
 }
 
 void fragment() {
-	vec4 tex = texture(base_texture, UV);
-	if (tex.a < 0.3) {
-		discard;
-	}
-	ALBEDO = tex.rgb;
-	ALPHA = tex.a;
+	ALBEDO = color;
 	METALLIC = metallic;
+	ROUGHNESS = roughness;
 	SPECULAR = 0.5;
 }
