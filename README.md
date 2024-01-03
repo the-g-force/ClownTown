@@ -1,6 +1,6 @@
 # Clown Town
 
-A Fam Jam Game from [the G-Force](https://the-g-force.github.io/) created on December 30, 2023.
+A Fam Jam Game from [the G-Force](https://the-g-force.github.io/) created on December 30, 2023. The world curvature effect was added a few days later.
 
 ## Instructions
 
