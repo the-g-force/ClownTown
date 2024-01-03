@@ -46,7 +46,7 @@ shader_parameter/color = Color(0.0980392, 0.360784, 0.0431373, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_t6wuu"]
 material = SubResource("ShaderMaterial_h5ank")
-size = Vector3(10, 0.25, 5)
+size = Vector3(20, 0.25, 5)
 subdivide_width = 10
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4xlac"]
@@ -84,7 +84,7 @@ shape = SubResource("BoxShape3D_0dqx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground_Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 mesh = SubResource("BoxMesh_t6wuu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_Right"]
@@ -94,7 +94,7 @@ shape = SubResource("BoxShape3D_4xlac")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground_Left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 mesh = SubResource("BoxMesh_t6wuu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_Left"]
