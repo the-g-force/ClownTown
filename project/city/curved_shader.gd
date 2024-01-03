@@ -1,5 +1,6 @@
 extends MeshInstance3D
 
+
 func _ready():
 	for i in get_surface_override_material_count():
 		var material := get_active_material(i)
