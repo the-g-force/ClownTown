@@ -1,4 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3beybcfpmxaa"]
+[gd_scene load_steps=13 format=3 uid="uid://b3beybcfpmxaa"]
+
+[ext_resource type="Script" path="res://city/curved_shader.gd" id="1_ojb8r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bb8k"]
 resource_name = "stone(Clone)"
@@ -238,6 +240,7 @@ collision_layer = 2
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.051, 1.615)
 mesh = SubResource("ArrayMesh_loakn")
 skeleton = NodePath("")
+script = ExtResource("1_ojb8r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.051, 1.615)

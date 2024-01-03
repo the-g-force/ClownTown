@@ -26,8 +26,14 @@ var empty_block_counter := 3
 @onready var _building_marker_left := $Building_Left
 @onready var _building_marker_right := $Building_Right
 
+var _desired_position : Vector3
 
 func _ready()->void:
+	# Rather than set the position when generating blocks, the desired
+	# position is stored, which allows for the add_child to be deferred.
+	if _desired_position != Vector3.ZERO:
+		global_position = _desired_position
+	
 	if generate_obstacle:
 		_generate_obstacle()
 	for _i in randi() % 2:
@@ -77,10 +83,11 @@ func _add_next_block() -> void:
 		next.generate_obstacle = not generate_obstacle
 		next.empty_block_counter = 0
 	
-	get_parent().add_child(next)
-	
-	next.global_position = global_position
-	next.position.z -= 5
+	# Use a deferred call here so there is time to set up the 
+	# next block.
+	get_parent().add_child.call_deferred(next)
+	next._desired_position = global_position
+	next._desired_position.z -= 5
 	
 
 
