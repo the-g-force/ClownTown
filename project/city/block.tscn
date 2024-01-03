@@ -15,6 +15,7 @@ render_priority = 0
 shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
+shader_parameter/metallic = 0.0
 shader_parameter/base_texture = SubResource("GradientTexture1D_qsxgk")
 
 [sub_resource type="BoxMesh" id="BoxMesh_qvxs7"]
@@ -37,6 +38,7 @@ render_priority = 0
 shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
+shader_parameter/metallic = 0.0
 shader_parameter/base_texture = SubResource("GradientTexture1D_2o8yc")
 
 [sub_resource type="BoxMesh" id="BoxMesh_wqb7w"]
@@ -59,6 +61,7 @@ render_priority = 0
 shader = ExtResource("2_vxa82")
 shader_parameter/curvature = 5.0
 shader_parameter/curvature_distance = 25.0
+shader_parameter/metallic = 0.0
 shader_parameter/base_texture = SubResource("GradientTexture1D_1g3hm")
 
 [sub_resource type="BoxMesh" id="BoxMesh_t6wuu"]

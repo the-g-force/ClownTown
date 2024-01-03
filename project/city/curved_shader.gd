@@ -11,3 +11,5 @@ func _ready():
 		image.fill(material.albedo_color)
 		var texture := ImageTexture.create_from_image(image)
 		new_material.set_shader_parameter("base_texture", texture)
+		
+		new_material.set_shader_parameter("metallic", material.metallic)
