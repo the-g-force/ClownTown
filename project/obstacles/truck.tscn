@@ -1,4 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyoxgkioyh50l"]
+[gd_scene load_steps=11 format=3 uid="uid://cyoxgkioyh50l"]
+
+[ext_resource type="Script" path="res://city/curved_shader.gd" id="1_rgp50"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnjs5"]
 resource_name = "wood(Clone)"
@@ -189,6 +191,7 @@ collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.678314, 0)
 mesh = SubResource("ArrayMesh_wegvi")
 skeleton = NodePath("")
+script = ExtResource("1_rgp50")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.678314, 0)

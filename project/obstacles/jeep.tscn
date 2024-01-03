@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6vqi4iyiig72"]
+[gd_scene load_steps=9 format=3 uid="uid://b6vqi4iyiig72"]
+
+[ext_resource type="Script" path="res://city/curved_shader.gd" id="1_dvckb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bauix"]
 resource_name = "dark(Clone)"
@@ -132,6 +134,7 @@ collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.651887, 0)
 mesh = SubResource("ArrayMesh_0xngr")
 skeleton = NodePath("")
+script = ExtResource("1_dvckb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.651887, 0)

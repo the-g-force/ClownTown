@@ -3,16 +3,16 @@ extends Area3D
 enum {MALE, FEMALE}
 
 const MALE_CLOWNS := [
-	"res://people/models/man_clown.glb"
+	"res://people/man_clown.tscn"
 ]
 const FEMALE_CLOWNS := [
-	"res://people/models/woman_clown.glb"
+	"res://people/woman_clown.tscn"
 ]
 const MALE_PEOPLE := [
-	"res://people/models/man_not_clown.glb"
+	"res://people/man_not_clown.tscn"
 ]
 const FEMALE_PEOPLE := [
-	"res://people/models/woman_not_clown.glb"
+	"res://people/woman_not_clown.tscn"
 ]
 
 var _is_clown := false

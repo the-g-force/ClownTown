@@ -1,29 +1,56 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxivuld1w250u"]
+[gd_scene load_steps=13 format=3 uid="uid://bxivuld1w250u"]
 
 [ext_resource type="Script" path="res://city/block.gd" id="1_tqbub"]
+[ext_resource type="Shader" path="res://city/curvature.gdshader" id="2_vxa82"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twmwn"]
-albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0wts"]
+render_priority = 0
+shader = ExtResource("2_vxa82")
+shader_parameter/curvature = 5.0
+shader_parameter/curvature_distance = 25.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.0
+shader_parameter/color = Color(0.0588235, 0.0588235, 0.0431373, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qvxs7"]
-material = SubResource("StandardMaterial3D_twmwn")
+material = SubResource("ShaderMaterial_t0wts")
 size = Vector3(6, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0prmv"]
 size = Vector3(6, 1, 5)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f08jo"]
+render_priority = 0
+shader = ExtResource("2_vxa82")
+shader_parameter/curvature = 5.0
+shader_parameter/curvature_distance = 25.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.0
+shader_parameter/color = Color(0.737255, 0.737255, 0.686275, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_wqb7w"]
+material = SubResource("ShaderMaterial_f08jo")
 size = Vector3(1, 0.25, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0dqx2"]
 size = Vector3(1, 0.25, 5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bq37n"]
-albedo_color = Color(0.0588235, 0.254902, 0.14902, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h5ank"]
+render_priority = 0
+shader = ExtResource("2_vxa82")
+shader_parameter/curvature = 5.0
+shader_parameter/curvature_distance = 25.0
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.0
+shader_parameter/color = Color(0.0980392, 0.360784, 0.0431373, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_t6wuu"]
-material = SubResource("StandardMaterial3D_bq37n")
-size = Vector3(60, 0.25, 5)
+material = SubResource("ShaderMaterial_h5ank")
+size = Vector3(20, 0.25, 5)
+subdivide_width = 10
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4xlac"]
 size = Vector3(10, 0.25, 5)
@@ -60,20 +87,20 @@ shape = SubResource("BoxShape3D_0dqx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground_Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 mesh = SubResource("BoxMesh_t6wuu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_Right"]
 shape = SubResource("BoxShape3D_4xlac")
 
-[node name="Ground_left" type="StaticBody3D" parent="."]
+[node name="Ground_Left" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground_left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground_Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 mesh = SubResource("BoxMesh_t6wuu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_left"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_Left"]
 shape = SubResource("BoxShape3D_1sw64")
 
 [node name="Sidewalk_Left" type="StaticBody3D" parent="."]

@@ -18,3 +18,5 @@ Created with:
 ## Third-Party Assets
 
 - [Kelpo font demo](https://www.dafont.com/kelpo.font) by Dharmas Studio, free for personal use
+
+- Uses code from [NovemberDev's curvature shader](https://github.com/NovemberDev/godot_curvature_shader) which is licensed under the [MIT license](assets/shader/godot_curvature_shader/LICENSE.txt)

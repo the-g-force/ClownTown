@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbm0mr26w5wkm"]
+
+[ext_resource type="PackedScene" uid="uid://0h77uma7w6bf" path="res://people/models/woman_clown.glb" id="1_xycrr"]
+[ext_resource type="Script" path="res://city/curved_shader.gd" id="2_46826"]
+
+[node name="woman_clown" instance=ExtResource("1_xycrr")]
+
+[node name="mergedBlocks(Clone)" parent="." index="0"]
+script = ExtResource("2_46826")

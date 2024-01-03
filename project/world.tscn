@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dbhexktlm6ox4" path="res://player/player.tscn" id="1_8wopq"]
 [ext_resource type="Script" path="res://world.gd" id="1_g4tfx"]
-[ext_resource type="Script" path="res://people/models/player_follow_camera.gd" id="2_inu3m"]
+[ext_resource type="Script" path="res://people/player_follow_camera.gd" id="2_inu3m"]
 [ext_resource type="PackedScene" uid="uid://bxivuld1w250u" path="res://city/block.tscn" id="4_fmgm5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tygjf"]
@@ -11,7 +11,8 @@
 sky_material = SubResource("ProceduralSkyMaterial_tygjf")
 
 [sub_resource type="Environment" id="Environment_dhw07"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.454902, 0.87451, 1, 1)
 background_energy_multiplier = 1.5
 sky = SubResource("Sky_bgtqn")
 ambient_light_source = 2
