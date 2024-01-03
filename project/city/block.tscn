@@ -1,12 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxivuld1w250u"]
+[gd_scene load_steps=12 format=3 uid="uid://bxivuld1w250u"]
 
 [ext_resource type="Script" path="res://city/block.gd" id="1_tqbub"]
+[ext_resource type="Shader" path="res://city/curvature.gdshader" id="2_vxa82"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twmwn"]
-albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0wts"]
+render_priority = 0
+shader = ExtResource("2_vxa82")
+shader_parameter/curvature = 5.0
+shader_parameter/curvature_distance = 25.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_qvxs7"]
-material = SubResource("StandardMaterial3D_twmwn")
+material = SubResource("ShaderMaterial_t0wts")
 size = Vector3(6, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0prmv"]
